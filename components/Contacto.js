@@ -78,11 +78,11 @@ export default function Contacto() {
     width: '100%',
     padding: '0.875rem 1rem',
     borderRadius: '0.75rem',
-    border: `1.5px solid ${errors[name] ? '#ef4444' : '#e8d5b8'}`,
+    border: `1.5px solid ${errors[name] ? '#ef4444' : '#b7ddc8'}`,
     background: errors[name] ? '#fff5f5' : '#fff',
     fontFamily: 'var(--font-sans,sans-serif)',
     fontSize: '0.925rem',
-    color: '#2c1810',
+    color: '#1a3826',
     outline: 'none',
     transition: 'border-color 0.2s, box-shadow 0.2s',
     boxSizing: 'border-box',
@@ -106,7 +106,7 @@ export default function Contacto() {
               fontWeight: 600,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: '#c9a668',
+              color: '#2d6a4f',
               marginBottom: '0.75rem',
             }}
           >
@@ -117,7 +117,7 @@ export default function Contacto() {
               fontFamily: 'var(--font-serif,Georgia,serif)',
               fontSize: 'clamp(1.8rem,4vw,2.8rem)',
               fontWeight: 700,
-              color: '#2c1810',
+              color: '#1a3826',
               margin: '0 0 1rem',
             }}
           >
@@ -127,7 +127,7 @@ export default function Contacto() {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '1rem',
-              color: '#7a6050',
+              color: '#4a7060',
               maxWidth: '480px',
               margin: '0 auto',
               lineHeight: 1.65,
@@ -152,7 +152,7 @@ export default function Contacto() {
                 fontFamily: 'var(--font-serif)',
                 fontSize: '1.3rem',
                 fontWeight: 700,
-                color: '#2c1810',
+                color: '#1a3826',
                 margin: '0 0 1.5rem',
               }}
             >
@@ -194,8 +194,8 @@ export default function Contacto() {
                   marginBottom: '1.25rem',
                   padding: '1rem',
                   borderRadius: '0.875rem',
-                  background: '#fdf8f3',
-                  border: '1px solid #f0e8dc',
+                  background: '#eef7f1',
+                  border: '1px solid #c8e6d4',
                 }}
               >
                 <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>{icon}</span>
@@ -207,7 +207,7 @@ export default function Contacto() {
                       fontWeight: 600,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
-                      color: '#c9a668',
+                      color: '#2d6a4f',
                       margin: '0 0 0.2rem',
                     }}
                   >
@@ -221,7 +221,7 @@ export default function Contacto() {
                       style={{
                         fontFamily: 'var(--font-sans)',
                         fontSize: '0.9rem',
-                        color: '#2c1810',
+                        color: '#1a3826',
                         textDecoration: 'none',
                         fontWeight: 500,
                       }}
@@ -233,7 +233,7 @@ export default function Contacto() {
                       style={{
                         fontFamily: 'var(--font-sans)',
                         fontSize: '0.9rem',
-                        color: '#2c1810',
+                        color: '#1a3826',
                         margin: 0,
                         fontWeight: 500,
                       }}
@@ -279,10 +279,10 @@ export default function Contacto() {
           {/* Form */}
           <div
             style={{
-              background: '#fdf8f3',
+              background: '#eef7f1',
               borderRadius: '1.25rem',
               padding: '2rem',
-              border: '1px solid #f0e8dc',
+              border: '1px solid #c8e6d4',
             }}
           >
             {/* Toast */}
@@ -326,7 +326,7 @@ export default function Contacto() {
                 <div>
                   <label
                     htmlFor="nombre"
-                    style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#4a3325', marginBottom: '0.375rem' }}
+                    style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#1e3828', marginBottom: '0.375rem' }}
                   >
                     Nombre completo *
                   </label>
@@ -339,8 +339,8 @@ export default function Contacto() {
                     placeholder="Tu nombre"
                     autoComplete="name"
                     style={inputStyle('nombre')}
-                    onFocus={(e) => (e.target.style.borderColor = '#c9a668')}
-                    onBlur={(e) => (e.target.style.borderColor = errors.nombre ? '#ef4444' : '#e8d5b8')}
+                    onFocus={(e) => (e.target.style.borderColor = '#2d6a4f')}
+                    onBlur={(e) => (e.target.style.borderColor = errors.nombre ? '#ef4444' : '#b7ddc8')}
                   />
                   {errors.nombre && (
                     <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', color: '#ef4444', margin: '0.25rem 0 0' }}>
@@ -353,7 +353,7 @@ export default function Contacto() {
                 <div>
                   <label
                     htmlFor="email"
-                    style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#4a3325', marginBottom: '0.375rem' }}
+                    style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#1e3828', marginBottom: '0.375rem' }}
                   >
                     Email *
                   </label>
@@ -366,8 +366,8 @@ export default function Contacto() {
                     placeholder="tu@email.com"
                     autoComplete="email"
                     style={inputStyle('email')}
-                    onFocus={(e) => (e.target.style.borderColor = '#c9a668')}
-                    onBlur={(e) => (e.target.style.borderColor = errors.email ? '#ef4444' : '#e8d5b8')}
+                    onFocus={(e) => (e.target.style.borderColor = '#2d6a4f')}
+                    onBlur={(e) => (e.target.style.borderColor = errors.email ? '#ef4444' : '#b7ddc8')}
                   />
                   {errors.email && (
                     <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', color: '#ef4444', margin: '0.25rem 0 0' }}>
@@ -381,7 +381,7 @@ export default function Contacto() {
               <div style={{ marginBottom: '1rem' }}>
                 <label
                   htmlFor="telefono"
-                  style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#4a3325', marginBottom: '0.375rem' }}
+                  style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#1e3828', marginBottom: '0.375rem' }}
                 >
                   Teléfono (opcional)
                 </label>
@@ -394,8 +394,8 @@ export default function Contacto() {
                   placeholder="+1 809-000-0000"
                   autoComplete="tel"
                   style={inputStyle('telefono')}
-                  onFocus={(e) => (e.target.style.borderColor = '#c9a668')}
-                  onBlur={(e) => (e.target.style.borderColor = '#e8d5b8')}
+                  onFocus={(e) => (e.target.style.borderColor = '#2d6a4f')}
+                  onBlur={(e) => (e.target.style.borderColor = '#b7ddc8')}
                 />
               </div>
 
@@ -403,7 +403,7 @@ export default function Contacto() {
               <div style={{ marginBottom: '1rem' }}>
                 <label
                   htmlFor="servicio"
-                  style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#4a3325', marginBottom: '0.375rem' }}
+                  style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#1e3828', marginBottom: '0.375rem' }}
                 >
                   Servicio de interés *
                 </label>
@@ -413,8 +413,8 @@ export default function Contacto() {
                   value={form.servicio}
                   onChange={handleChange}
                   style={{ ...inputStyle('servicio'), cursor: 'pointer' }}
-                  onFocus={(e) => (e.target.style.borderColor = '#c9a668')}
-                  onBlur={(e) => (e.target.style.borderColor = errors.servicio ? '#ef4444' : '#e8d5b8')}
+                  onFocus={(e) => (e.target.style.borderColor = '#2d6a4f')}
+                  onBlur={(e) => (e.target.style.borderColor = errors.servicio ? '#ef4444' : '#b7ddc8')}
                 >
                   <option value="">Selecciona una opción</option>
                   {SERVICIOS_OPTS.map((s) => (
@@ -433,11 +433,11 @@ export default function Contacto() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.375rem' }}>
                   <label
                     htmlFor="mensaje"
-                    style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#4a3325' }}
+                    style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 600, color: '#1e3828' }}
                   >
                     Mensaje *
                   </label>
-                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.72rem', color: form.mensaje.length > 450 ? '#ef4444' : '#a08060' }}>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.72rem', color: form.mensaje.length > 450 ? '#ef4444' : '#4a7060' }}>
                     {form.mensaje.length}/500
                   </span>
                 </div>
@@ -450,8 +450,8 @@ export default function Contacto() {
                   maxLength={500}
                   placeholder="Cuéntame sobre el vestido que deseas, la ocasión, tallas, colores preferidos..."
                   style={{ ...inputStyle('mensaje'), resize: 'vertical', minHeight: '120px' }}
-                  onFocus={(e) => (e.target.style.borderColor = '#c9a668')}
-                  onBlur={(e) => (e.target.style.borderColor = errors.mensaje ? '#ef4444' : '#e8d5b8')}
+                  onFocus={(e) => (e.target.style.borderColor = '#2d6a4f')}
+                  onBlur={(e) => (e.target.style.borderColor = errors.mensaje ? '#ef4444' : '#b7ddc8')}
                 />
                 {errors.mensaje && (
                   <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', color: '#ef4444', margin: '0.25rem 0 0' }}>
@@ -467,8 +467,8 @@ export default function Contacto() {
                   width: '100%',
                   padding: '1rem',
                   background: loading
-                    ? 'rgba(201,166,104,0.6)'
-                    : 'linear-gradient(135deg,#c9a668,#a07840)',
+                    ? 'rgba(45,106,79,0.6)'
+                    : 'linear-gradient(135deg,#2d6a4f,#1b4332)',
                   color: '#fff',
                   fontFamily: 'var(--font-sans)',
                   fontWeight: 700,
@@ -482,7 +482,7 @@ export default function Contacto() {
                   justifyContent: 'center',
                   gap: '0.625rem',
                   transition: 'opacity 0.2s',
-                  boxShadow: '0 4px 16px rgba(201,166,104,0.3)',
+                  boxShadow: '0 4px 16px rgba(45,106,79,0.3)',
                 }}
               >
                 {loading ? (

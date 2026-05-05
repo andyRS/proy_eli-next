@@ -63,11 +63,11 @@ function Dropdown({ filterKey, def, selected, onChange }) {
           gap: '0.4rem',
           padding: '0.45rem 1rem',
           borderRadius: '100px',
-          border: activeCount > 0 ? 'none' : '1.5px solid #e8d5b8',
+          border: activeCount > 0 ? 'none' : '1.5px solid #b7ddc8',
           background: activeCount > 0
-            ? 'linear-gradient(135deg,#c9a668,#a07840)'
+            ? 'linear-gradient(135deg,#2d6a4f,#1b4332)'
             : '#fff',
-          color: activeCount > 0 ? '#fff' : '#6b5744',
+          color: activeCount > 0 ? '#fff' : '#4a6a58',
           fontFamily: 'var(--font-sans,sans-serif)',
           fontSize: '0.85rem',
           fontWeight: activeCount > 0 ? 600 : 400,
@@ -122,7 +122,7 @@ function Dropdown({ filterKey, def, selected, onChange }) {
             background: '#fff',
             borderRadius: '0.875rem',
             boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-            border: '1px solid #f0e8dc',
+            border: '1px solid #c8e6d4',
             minWidth: '170px',
             padding: '0.5rem',
             animation: 'dropIn 0.18s ease',
@@ -142,16 +142,16 @@ function Dropdown({ filterKey, def, selected, onChange }) {
                   padding: '0.5rem 0.75rem',
                   borderRadius: '0.5rem',
                   cursor: 'pointer',
-                  background: isSelected ? 'rgba(201,166,104,0.08)' : 'transparent',
+                  background: isSelected ? 'rgba(45,106,79,0.08)' : 'transparent',
                   transition: 'background 0.15s',
                   fontFamily: 'var(--font-sans,sans-serif)',
                   fontSize: '0.875rem',
-                  color: isSelected ? '#a07840' : '#4a3325',
+                  color: isSelected ? '#1b4332' : '#1e3828',
                   fontWeight: isSelected ? 600 : 400,
                   userSelect: 'none',
                 }}
                 onMouseOver={(e) => {
-                  if (!isSelected) e.currentTarget.style.background = '#fdf8f3'
+                  if (!isSelected) e.currentTarget.style.background = '#eef7f1'
                 }}
                 onMouseOut={(e) => {
                   if (!isSelected) e.currentTarget.style.background = 'transparent'
@@ -162,7 +162,7 @@ function Dropdown({ filterKey, def, selected, onChange }) {
                   checked={isSelected}
                   onChange={() => onChange(filterKey, opt)}
                   style={{
-                    accentColor: '#c9a668',
+                    accentColor: '#2d6a4f',
                     width: '0.875rem',
                     height: '0.875rem',
                     cursor: 'pointer',
@@ -227,7 +227,7 @@ export default function Filtros({ filters, onChange }) {
             fontWeight: 600,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            color: '#c9a668',
+            color: '#2d6a4f',
             marginRight: '0.25rem',
           }}
         >
@@ -254,21 +254,21 @@ export default function Filtros({ filters, onChange }) {
               gap: '0.3rem',
               padding: '0.45rem 0.875rem',
               borderRadius: '100px',
-              border: '1.5px solid #e8d5b8',
+              border: '1.5px solid #b7ddc8',
               background: 'transparent',
-              color: '#a07840',
+              color: '#1b4332',
               fontFamily: 'var(--font-sans,sans-serif)',
               fontSize: '0.8rem',
               cursor: 'pointer',
               transition: 'all 0.2s',
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.background = '#fdf8f3'
-              e.currentTarget.style.borderColor = '#c9a668'
+              e.currentTarget.style.background = '#eef7f1'
+              e.currentTarget.style.borderColor = '#2d6a4f'
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.borderColor = '#e8d5b8'
+              e.currentTarget.style.borderColor = '#b7ddc8'
             }}
           >
             ✕ Limpiar filtros

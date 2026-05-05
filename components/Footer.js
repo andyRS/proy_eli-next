@@ -13,7 +13,7 @@ export default function Footer() {
     <footer
       id="footer"
       style={{
-        background: '#1e1b18',
+        background: '#0d2b1e',
         color: 'rgba(255,255,255,0.75)',
         padding: '4rem 0 0',
       }}
@@ -46,7 +46,7 @@ export default function Footer() {
                 width: '2.25rem',
                 height: '2.25rem',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg,#c9a668,#a07840)',
+                background: 'linear-gradient(135deg,#2d6a4f,#1b4332)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -64,7 +64,7 @@ export default function Footer() {
                 fontSize: '0.9rem',
                 fontWeight: 700,
                 letterSpacing: '0.1em',
-                color: '#c9a668',
+                color: '#52b788',
                 textTransform: 'uppercase',
               }}
             >
@@ -104,7 +104,7 @@ export default function Footer() {
                 transition: 'color 0.2s',
               }}
             >
-              <span style={{ color: '#c9a668' }}>📱</span>
+              <span style={{ color: '#52b788' }}>📱</span>
               +1 849-215-1118
             </a>
             <a
@@ -120,7 +120,7 @@ export default function Footer() {
                 transition: 'color 0.2s',
               }}
             >
-              <span style={{ color: '#c9a668' }}>✉️</span>
+              <span style={{ color: '#52b788' }}>✉️</span>
               elizabethmendezp18@gmail.com
             </a>
             <span
@@ -133,7 +133,7 @@ export default function Footer() {
                 color: 'rgba(255,255,255,0.65)',
               }}
             >
-              <span style={{ color: '#c9a668' }}>📍</span>
+              <span style={{ color: '#52b788' }}>📍</span>
               Santo Domingo, República Dominicana
             </span>
           </div>
@@ -148,7 +148,7 @@ export default function Footer() {
               fontWeight: 600,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: '#c9a668',
+              color: '#52b788',
               marginBottom: '1.25rem',
             }}
           >
@@ -176,7 +176,7 @@ export default function Footer() {
                       textDecoration: 'none',
                       transition: 'color 0.2s',
                     }}
-                    onMouseOver={(e) => (e.currentTarget.style.color = '#c9a668')}
+                    onMouseOver={(e) => (e.currentTarget.style.color = '#52b788')}
                     onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
                   >
                     {label}
@@ -196,7 +196,7 @@ export default function Footer() {
               fontWeight: 600,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: '#c9a668',
+              color: '#52b788',
               marginBottom: '1.25rem',
             }}
           >
@@ -230,7 +230,7 @@ export default function Footer() {
                     textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = '#c9a668')}
+                  onMouseOver={(e) => (e.currentTarget.style.color = '#52b788')}
                   onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
                 >
                   {s}
@@ -277,7 +277,7 @@ export default function Footer() {
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
-              onMouseOver={(e) => (e.currentTarget.style.color = '#c9a668')}
+              onMouseOver={(e) => (e.currentTarget.style.color = '#52b788')}
               onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
             >
               {link}

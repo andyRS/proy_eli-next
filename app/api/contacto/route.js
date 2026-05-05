@@ -66,9 +66,9 @@ export async function POST(request) {
           <!DOCTYPE html>
           <html lang="es">
           <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
-          <body style="margin:0;padding:0;background:#f5f0e8;font-family:'Segoe UI',sans-serif;">
+          <body style="margin:0;padding:0;background:#e8f5ee;font-family:'Segoe UI',sans-serif;">
             <div style="max-width:600px;margin:2rem auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-              <div style="background:linear-gradient(135deg,#c9a668,#a07840);padding:2rem 2.5rem;">
+              <div style="background:linear-gradient(135deg,#2d6a4f,#1b4332);padding:2rem 2.5rem;">
                 <h1 style="margin:0;color:#fff;font-size:1.5rem;font-weight:700;letter-spacing:0.05em;">
                   ✉ Nueva consulta desde tu portfolio
                 </h1>
@@ -76,35 +76,35 @@ export async function POST(request) {
               <div style="padding:2rem 2.5rem;">
                 <table style="width:100%;border-collapse:collapse;">
                   <tr>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;color:#8a8078;font-size:0.85rem;width:120px;">Nombre</td>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;color:#1e1b18;font-weight:600;">${nombreClean}</td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;color:#5a7a68;font-size:0.85rem;width:120px;">Nombre</td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;color:#0d2b1e;font-weight:600;">${nombreClean}</td>
                   </tr>
                   <tr>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;color:#8a8078;font-size:0.85rem;">Email</td>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;"><a href="mailto:${email}" style="color:#c9a668;">${email}</a></td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;color:#5a7a68;font-size:0.85rem;">Email</td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;"><a href="mailto:${email}" style="color:#2d6a4f;">${email}</a></td>
                   </tr>
                   <tr>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;color:#8a8078;font-size:0.85rem;">Teléfono</td>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;color:#1e1b18;">${telefono || 'No proporcionado'}</td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;color:#5a7a68;font-size:0.85rem;">Teléfono</td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;color:#0d2b1e;">${telefono || 'No proporcionado'}</td>
                   </tr>
                   <tr>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;color:#8a8078;font-size:0.85rem;">Servicio</td>
-                    <td style="padding:0.75rem 0;border-bottom:1px solid #f0e8dc;color:#1e1b18;font-weight:600;">${servicio || 'No especificado'}</td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;color:#5a7a68;font-size:0.85rem;">Servicio</td>
+                    <td style="padding:0.75rem 0;border-bottom:1px solid #c8e6d4;color:#0d2b1e;font-weight:600;">${servicio || 'No especificado'}</td>
                   </tr>
                 </table>
                 <div style="margin-top:1.5rem;">
-                  <p style="margin:0 0 0.5rem;color:#8a8078;font-size:0.85rem;">Mensaje</p>
-                  <div style="background:#fdf8f3;border-radius:12px;padding:1.25rem;color:#1e1b18;line-height:1.7;font-size:0.95rem;">
+                  <p style="margin:0 0 0.5rem;color:#5a7a68;font-size:0.85rem;">Mensaje</p>
+                  <div style="background:#eef7f1;border-radius:12px;padding:1.25rem;color:#0d2b1e;line-height:1.7;font-size:0.95rem;">
                     ${mensajeClean.replace(/\n/g, '<br>')}
                   </div>
                 </div>
                 <div style="margin-top:2rem;text-align:center;">
-                  <a href="mailto:${email}" style="display:inline-block;padding:0.75rem 2rem;background:linear-gradient(135deg,#c9a668,#a07840);color:#fff;border-radius:100px;text-decoration:none;font-weight:600;font-size:0.9rem;">
+                  <a href="mailto:${email}" style="display:inline-block;padding:0.75rem 2rem;background:linear-gradient(135deg,#2d6a4f,#1b4332);color:#fff;border-radius:100px;text-decoration:none;font-weight:600;font-size:0.9rem;">
                     Responder a ${nombreClean}
                   </a>
                 </div>
               </div>
-              <div style="padding:1rem 2.5rem;background:#fdf8f3;text-align:center;color:#8a8078;font-size:0.8rem;">
+              <div style="padding:1rem 2.5rem;background:#eef7f1;text-align:center;color:#5a7a68;font-size:0.8rem;">
                 Enviado desde elizabethmendez.com
               </div>
             </div>

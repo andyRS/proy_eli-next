@@ -3,17 +3,17 @@
    Next.js Migration v1.0
    ============================================ */
 :root {
-  --gold:        #c9a668;
-  --terracotta:  #c17b5a;
-  --charcoal:    #1e1b18;
-  --warm-white:  #faf8f5;
-  --cream:       #f5f0e8;
-  --beige:       #e8ddd0;
-  --warm-gray:   #8a8078;
+  --gold:        #2d6a4f;
+  --terracotta:  #40916c;
+  --charcoal:    #0d2b1e;
+  --warm-white:  #f0faf4;
+  --cream:       #e8f5ee;
+  --beige:       #c8e6d4;
+  --warm-gray:   #5a7a68;
   --success:     #2e7d32;
   --error:       #c62828;
-  --gradient-premium: linear-gradient(135deg, #c9a668 0%, #e8c98a 50%, #c9a668 100%);
-  --gradient-soft:    linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
+  --gradient-premium: linear-gradient(135deg, #2d6a4f 0%, #52b788 50%, #2d6a4f 100%);
+  --gradient-soft:    linear-gradient(135deg, #f0faf4 0%, #e8f5ee 100%);
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.14);
@@ -63,9 +63,9 @@ ul { list-style: none; }
 }
 .btn-primary {
   background: var(--gradient-premium); color: white;
-  box-shadow: 0 4px 20px rgba(201,166,104,0.35);
+  box-shadow: 0 4px 20px rgba(45,106,79,0.35);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(201,166,104,0.5); filter: brightness(1.05); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(45,106,79,0.5); filter: brightness(1.05); }
 .btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
 .btn-outline:hover { background: var(--gold); color: white; transform: translateY(-2px); }
 .btn-small { padding: 8px 20px; font-size: 12px; }
@@ -126,7 +126,7 @@ ul { list-style: none; }
   transition: all var(--transition); outline: none;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,166,104,0.15);
+  border-color: var(--gold); box-shadow: 0 0 0 3px rgba(45,106,79,0.15);
 }
 .form-group.has-error input,
 .form-group.has-error select,

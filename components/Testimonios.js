@@ -106,7 +106,7 @@ export default function Testimonios() {
       id="testimonios"
       style={{
         padding: '5rem 0',
-        background: 'linear-gradient(135deg, #2c1810 0%, #4a2c1a 100%)',
+        background: 'linear-gradient(135deg, #1a3826 0%, #1b4332 100%)',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -121,7 +121,7 @@ export default function Testimonios() {
           width: '600px',
           height: '600px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(201,166,104,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(45,106,79,0.08) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -136,7 +136,7 @@ export default function Testimonios() {
               fontWeight: 600,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: '#c9a668',
+              color: '#74c69d',
               marginBottom: '0.75rem',
             }}
           >
@@ -162,7 +162,7 @@ export default function Testimonios() {
           style={{
             background: 'rgba(255,255,255,0.05)',
             backdropFilter: 'blur(12px)',
-            border: '1px solid rgba(201,166,104,0.2)',
+            border: '1px solid rgba(45,106,79,0.2)',
             borderRadius: '1.5rem',
             padding: 'clamp(2rem,5vw,3rem)',
             textAlign: 'center',
@@ -214,7 +214,7 @@ export default function Testimonios() {
                 top: '-0.5rem',
                 left: '-0.5rem',
                 fontSize: '3rem',
-                color: 'rgba(201,166,104,0.3)',
+                color: 'rgba(45,106,79,0.3)',
                 fontFamily: 'Georgia, serif',
                 lineHeight: 1,
               }}
@@ -230,7 +230,7 @@ export default function Testimonios() {
               fontFamily: 'var(--font-sans)',
               fontWeight: 600,
               fontSize: '0.95rem',
-              color: '#c9a668',
+              color: '#52b788',
               margin: '0 0 0.25rem',
             }}
           >
@@ -265,9 +265,9 @@ export default function Testimonios() {
               width: '2.5rem',
               height: '2.5rem',
               borderRadius: '50%',
-              border: '1.5px solid rgba(201,166,104,0.4)',
+              border: '1.5px solid rgba(82,183,136,0.5)',
               background: 'transparent',
-              color: '#c9a668',
+              color: '#52b788',
               cursor: 'pointer',
               fontSize: '1.1rem',
               display: 'flex',
@@ -291,7 +291,7 @@ export default function Testimonios() {
                   height: '0.5rem',
                   borderRadius: '100px',
                   border: 'none',
-                  background: i === current ? '#c9a668' : 'rgba(201,166,104,0.3)',
+                  background: i === current ? '#2d6a4f' : 'rgba(45,106,79,0.3)',
                   cursor: 'pointer',
                   transition: 'all 0.3s',
                   padding: 0,
@@ -307,9 +307,9 @@ export default function Testimonios() {
               width: '2.5rem',
               height: '2.5rem',
               borderRadius: '50%',
-              border: '1.5px solid rgba(201,166,104,0.4)',
+              border: '1.5px solid rgba(82,183,136,0.5)',
               background: 'transparent',
-              color: '#c9a668',
+              color: '#52b788',
               cursor: 'pointer',
               fontSize: '1.1rem',
               display: 'flex',

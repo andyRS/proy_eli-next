@@ -27,7 +27,7 @@ export default function VestidoCard({ vestido }) {
 
   const badgeColors = {
     nuevo: '#22c55e',
-    popular: '#c9a668',
+    popular: '#2d6a4f',
     premium: '#a855f7',
   }
 
@@ -59,7 +59,7 @@ export default function VestidoCard({ vestido }) {
           style={{
             position: 'relative',
             paddingBottom: '125%',
-            background: 'linear-gradient(135deg, #fdf8f3, #f5e6d0)',
+            background: 'linear-gradient(135deg, #eef7f1, #d8f3dc)',
             flexShrink: 0,
           }}
         >
@@ -70,7 +70,7 @@ export default function VestidoCard({ vestido }) {
               style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(90deg, #f0e8dc 25%, #f8f0e6 50%, #f0e8dc 75%)',
+                background: 'linear-gradient(90deg, #c8e6d4 25%, #eef7f1 50%, #c8e6d4 75%)',
                 backgroundSize: '200% 100%',
                 animation: 'skeleton 1.4s ease-in-out infinite',
               }}
@@ -99,7 +99,7 @@ export default function VestidoCard({ vestido }) {
                 fontWeight: 700,
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
-                background: badgeColors[vestido.badgeType] || '#c9a668',
+                background: badgeColors[vestido.badgeType] || '#2d6a4f',
                 color: '#fff',
                 zIndex: 1,
               }}
@@ -144,7 +144,7 @@ export default function VestidoCard({ vestido }) {
               fontFamily: 'var(--font-serif, Georgia, serif)',
               fontSize: '1.1rem',
               fontWeight: 700,
-              color: '#2c1810',
+              color: '#1a3826',
               margin: 0,
             }}
           >
@@ -154,7 +154,7 @@ export default function VestidoCard({ vestido }) {
             style={{
               fontFamily: 'var(--font-sans, sans-serif)',
               fontSize: '0.85rem',
-              color: '#7a6050',
+              color: '#4a7060',
               lineHeight: 1.55,
               margin: 0,
             }}
@@ -169,15 +169,15 @@ export default function VestidoCard({ vestido }) {
               alignItems: 'center',
               marginTop: 'auto',
               paddingTop: '0.75rem',
-              borderTop: '1px solid #f0e8dc',
+              borderTop: '1px solid #c8e6d4',
             }}
           >
             <span
               style={{
                 fontFamily: 'var(--font-sans, sans-serif)',
                 fontSize: '0.8rem',
-                color: '#a07840',
-                background: '#fdf8f0',
+                color: '#1b4332',
+                background: '#eef7f1',
                 padding: '0.2rem 0.625rem',
                 borderRadius: '100px',
                 fontWeight: 500,
@@ -190,7 +190,7 @@ export default function VestidoCard({ vestido }) {
                 fontFamily: 'var(--font-serif, Georgia, serif)',
                 fontSize: '1.1rem',
                 fontWeight: 700,
-                color: '#c9a668',
+                color: '#2d6a4f',
               }}
             >
               US${vestido.precio}
@@ -204,7 +204,7 @@ export default function VestidoCard({ vestido }) {
               width: '100%',
               marginTop: '0.75rem',
               padding: '0.625rem',
-              background: 'linear-gradient(135deg, #c9a668, #a07840)',
+              background: 'linear-gradient(135deg, #2d6a4f, #1b4332)',
               color: '#fff',
               fontFamily: 'var(--font-sans, sans-serif)',
               fontSize: '0.85rem',

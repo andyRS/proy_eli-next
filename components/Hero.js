@@ -9,7 +9,7 @@ export default function Hero() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #2c1810 0%, #4a2c1a 40%, #6b3d24 70%, #3d2518 100%)',
+        background: 'linear-gradient(135deg, #1a3826 0%, #1b4332 40%, #2d6a4f 70%, #1a3c2e 100%)',
       }}
     >
       {/* Decorative pattern overlay */}
@@ -19,9 +19,9 @@ export default function Hero() {
           position: 'absolute',
           inset: 0,
           backgroundImage: `
-            radial-gradient(circle at 20% 50%, rgba(201,166,104,0.08) 0%, transparent 60%),
-            radial-gradient(circle at 80% 20%, rgba(201,166,104,0.06) 0%, transparent 50%),
-            radial-gradient(circle at 60% 80%, rgba(201,166,104,0.05) 0%, transparent 40%)
+            radial-gradient(circle at 20% 50%, rgba(45,106,79,0.08) 0%, transparent 60%),
+            radial-gradient(circle at 80% 20%, rgba(45,106,79,0.06) 0%, transparent 50%),
+            radial-gradient(circle at 60% 80%, rgba(45,106,79,0.05) 0%, transparent 40%)
           `,
           pointerEvents: 'none',
         }}
@@ -33,7 +33,7 @@ export default function Hero() {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'radial-gradient(circle, rgba(201,166,104,0.15) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, rgba(45,106,79,0.15) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           pointerEvents: 'none',
           opacity: 0.5,
@@ -62,21 +62,21 @@ export default function Hero() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
-              background: 'rgba(201,166,104,0.15)',
-              border: '1px solid rgba(201,166,104,0.35)',
+              background: 'rgba(45,106,79,0.15)',
+              border: '1px solid rgba(45,106,79,0.35)',
               borderRadius: '100px',
               padding: '0.375rem 1rem',
               marginBottom: '1.75rem',
               backdropFilter: 'blur(8px)',
             }}
           >
-            <span style={{ fontSize: '0.7rem', color: '#c9a668' }}>✦</span>
+            <span style={{ fontSize: '0.7rem', color: '#74c69d' }}>✦</span>
             <span
               style={{
                 fontFamily: 'var(--font-sans, sans-serif)',
                 fontSize: '0.8rem',
                 fontWeight: 500,
-                color: '#d4b07a',
+                color: '#74c69d',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
               }}
@@ -102,7 +102,7 @@ export default function Hero() {
                 display: 'block',
                 fontStyle: 'italic',
                 fontWeight: 400,
-                color: '#c9a668',
+                color: '#74c69d',
                 position: 'relative',
               }}
             >
@@ -117,7 +117,7 @@ export default function Hero() {
                   width: '100%',
                   height: '8px',
                   fill: 'none',
-                  stroke: '#c9a668',
+                  stroke: '#74c69d',
                   strokeWidth: 2,
                   opacity: 0.5,
                 }}
@@ -153,7 +153,7 @@ export default function Hero() {
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.875rem 1.875rem',
-                background: 'linear-gradient(135deg, #c9a668, #a07840)',
+                background: 'linear-gradient(135deg, #2d6a4f, #1b4332)',
                 color: '#fff',
                 fontFamily: 'var(--font-sans, sans-serif)',
                 fontWeight: 600,
@@ -161,16 +161,16 @@ export default function Hero() {
                 letterSpacing: '0.04em',
                 borderRadius: '100px',
                 textDecoration: 'none',
-                boxShadow: '0 4px 20px rgba(201,166,104,0.35)',
+                boxShadow: '0 4px 20px rgba(45,106,79,0.35)',
                 transition: 'transform 0.2s, box-shadow 0.2s',
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 8px 28px rgba(201,166,104,0.45)'
+                e.currentTarget.style.boxShadow = '0 8px 28px rgba(45,106,79,0.45)'
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.transform = ''
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(201,166,104,0.35)'
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(45,106,79,0.35)'
               }}
             >
               Ver colección
@@ -196,8 +196,8 @@ export default function Hero() {
                 transition: 'border-color 0.2s, background 0.2s',
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.borderColor = '#c9a668'
-                e.currentTarget.style.background = 'rgba(201,166,104,0.1)'
+                e.currentTarget.style.borderColor = '#2d6a4f'
+                e.currentTarget.style.background = 'rgba(45,106,79,0.1)'
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)'
@@ -230,7 +230,7 @@ export default function Hero() {
                     fontFamily: 'var(--font-serif, Georgia, serif)',
                     fontSize: '2rem',
                     fontWeight: 700,
-                    color: '#c9a668',
+                    color: '#2d6a4f',
                     margin: 0,
                     lineHeight: 1,
                   }}
@@ -261,7 +261,7 @@ export default function Hero() {
             fontSize: 'clamp(5rem, 12vw, 9rem)',
             lineHeight: 1,
             userSelect: 'none',
-            filter: 'drop-shadow(0 8px 32px rgba(201,166,104,0.3))',
+            filter: 'drop-shadow(0 8px 32px rgba(45,106,79,0.3))',
             animation: 'heroFloat 4s ease-in-out infinite',
           }}
         >
@@ -299,7 +299,7 @@ export default function Hero() {
           style={{
             width: '1.5px',
             height: '2rem',
-            background: 'linear-gradient(to bottom, rgba(201,166,104,0.7), transparent)',
+            background: 'linear-gradient(to bottom, rgba(45,106,79,0.7), transparent)',
           }}
         />
       </div>

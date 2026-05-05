@@ -66,7 +66,7 @@ export default function QuickViewModal({ vestido, onClose }) {
           style={{
             position: 'relative',
             minHeight: '360px',
-            background: 'linear-gradient(135deg, #fdf8f3, #f5e6d0)',
+            background: 'linear-gradient(135deg, #eef7f1, #d8f3dc)',
           }}
         >
           <Image
@@ -92,7 +92,7 @@ export default function QuickViewModal({ vestido, onClose }) {
                   vestido.badgeType === 'nuevo'
                     ? '#22c55e'
                     : vestido.badgeType === 'popular'
-                    ? '#c9a668'
+                    ? '#2d6a4f'
                     : '#a855f7',
                 color: '#fff',
               }}
@@ -133,7 +133,7 @@ export default function QuickViewModal({ vestido, onClose }) {
               fontFamily: 'var(--font-serif, Georgia, serif)',
               fontSize: '1.5rem',
               fontWeight: 700,
-              color: '#2c1810',
+              color: '#1a3826',
               margin: '0 0 0.75rem',
               paddingRight: '2rem',
             }}
@@ -145,7 +145,7 @@ export default function QuickViewModal({ vestido, onClose }) {
             style={{
               fontFamily: 'var(--font-sans, sans-serif)',
               fontSize: '0.925rem',
-              color: '#6b5744',
+              color: '#4a6a58',
               lineHeight: 1.65,
               margin: '0 0 1.5rem',
             }}
@@ -163,7 +163,7 @@ export default function QuickViewModal({ vestido, onClose }) {
                   fontWeight: 600,
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: '#c9a668',
+                  color: '#2d6a4f',
                   margin: '0 0 0.625rem',
                 }}
               >
@@ -179,10 +179,10 @@ export default function QuickViewModal({ vestido, onClose }) {
                       gap: '0.5rem',
                       fontFamily: 'var(--font-sans, sans-serif)',
                       fontSize: '0.875rem',
-                      color: '#4a3325',
+                      color: '#1e3828',
                     }}
                   >
-                    <span style={{ color: '#c9a668', fontWeight: 700, fontSize: '0.75rem' }}>✓</span>
+                    <span style={{ color: '#2d6a4f', fontWeight: 700, fontSize: '0.75rem' }}>✓</span>
                     {d}
                   </li>
                 ))}
@@ -195,23 +195,23 @@ export default function QuickViewModal({ vestido, onClose }) {
             <div
               style={{
                 flex: 1,
-                background: '#fdf8f3',
+                background: '#eef7f1',
                 borderRadius: '0.75rem',
                 padding: '0.875rem',
                 textAlign: 'center',
               }}
             >
-              <p style={{ margin: 0, fontSize: '0.7rem', color: '#9a7c5e', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'var(--font-sans)' }}>
+              <p style={{ margin: 0, fontSize: '0.7rem', color: '#4a7060', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'var(--font-sans)' }}>
                 Edad
               </p>
-              <p style={{ margin: '0.25rem 0 0', fontSize: '1.1rem', fontWeight: 700, color: '#2c1810', fontFamily: 'var(--font-serif)' }}>
+              <p style={{ margin: '0.25rem 0 0', fontSize: '1.1rem', fontWeight: 700, color: '#1a3826', fontFamily: 'var(--font-serif)' }}>
                 {vestido.edad} años
               </p>
             </div>
             <div
               style={{
                 flex: 1,
-                background: 'linear-gradient(135deg, #c9a668, #a07840)',
+                background: 'linear-gradient(135deg, #2d6a4f, #1b4332)',
                 borderRadius: '0.75rem',
                 padding: '0.875rem',
                 textAlign: 'center',
@@ -233,7 +233,7 @@ export default function QuickViewModal({ vestido, onClose }) {
               display: 'block',
               textAlign: 'center',
               padding: '0.875rem',
-              background: 'linear-gradient(135deg, #c9a668, #a07840)',
+              background: 'linear-gradient(135deg, #2d6a4f, #1b4332)',
               color: '#fff',
               fontFamily: 'var(--font-sans, sans-serif)',
               fontWeight: 600,

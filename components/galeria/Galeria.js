@@ -22,9 +22,9 @@ function FilterChip({ label, active, onClick }) {
       style={{
         padding: '0.4rem 1rem',
         borderRadius: '100px',
-        border: active ? 'none' : '1.5px solid #e8d5b8',
-        background: active ? 'linear-gradient(135deg,#c9a668,#a07840)' : '#fff',
-        color: active ? '#fff' : '#6b5744',
+        border: active ? 'none' : '1.5px solid #b7ddc8',
+        background: active ? 'linear-gradient(135deg,#2d6a4f,#1b4332)' : '#fff',
+        color: active ? '#fff' : '#4a6a58',
         fontFamily: 'var(--font-sans,sans-serif)',
         fontSize: '0.82rem',
         fontWeight: active ? 600 : 400,
@@ -125,7 +125,7 @@ export default function Galeria() {
       id="galeria-vestidos"
       style={{
         padding: '5rem 0',
-        background: 'linear-gradient(180deg, #fdf9f4 0%, #fff 100%)',
+        background: 'linear-gradient(180deg, #eef7f1 0%, #fff 100%)',
       }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
@@ -138,7 +138,7 @@ export default function Galeria() {
               fontWeight: 600,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: '#c9a668',
+              color: '#2d6a4f',
               marginBottom: '0.75rem',
             }}
           >
@@ -149,7 +149,7 @@ export default function Galeria() {
               fontFamily: 'var(--font-serif,Georgia,serif)',
               fontSize: 'clamp(1.8rem,4vw,2.8rem)',
               fontWeight: 700,
-              color: '#2c1810',
+              color: '#1a3826',
               margin: '0 0 1rem',
             }}
           >
@@ -159,7 +159,7 @@ export default function Galeria() {
             style={{
               fontFamily: 'var(--font-sans,sans-serif)',
               fontSize: '1rem',
-              color: '#7a6050',
+              color: '#4a7060',
               maxWidth: '520px',
               margin: '0 auto',
               lineHeight: 1.65,
@@ -178,7 +178,7 @@ export default function Galeria() {
             padding: '1.25rem 1.5rem',
             marginBottom: '2rem',
             boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
-            border: '1px solid #f0e8dc',
+            border: '1px solid #c8e6d4',
           }}
         >
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'flex-start' }}>
@@ -192,7 +192,7 @@ export default function Galeria() {
                   fontWeight: 600,
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: '#c9a668',
+                  color: '#2d6a4f',
                 }}
               >
                 Edad
@@ -219,7 +219,7 @@ export default function Galeria() {
                   fontWeight: 600,
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: '#c9a668',
+                  color: '#2d6a4f',
                 }}
               >
                 Ocasión
@@ -246,7 +246,7 @@ export default function Galeria() {
                   fontWeight: 600,
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: '#c9a668',
+                  color: '#2d6a4f',
                 }}
               >
                 Color
@@ -270,10 +270,10 @@ export default function Galeria() {
               style={{
                 marginTop: '1rem',
                 padding: '0.35rem 0.875rem',
-                border: '1.5px solid #e8d5b8',
+                border: '1.5px solid #b7ddc8',
                 borderRadius: '100px',
                 background: 'transparent',
-                color: '#a07840',
+                color: '#1b4332',
                 fontFamily: 'var(--font-sans)',
                 fontSize: '0.8rem',
                 cursor: 'pointer',
@@ -291,7 +291,7 @@ export default function Galeria() {
             style={{
               textAlign: 'center',
               padding: '4rem 1rem',
-              color: '#a08060',
+              color: '#4a7060',
               fontFamily: 'var(--font-sans)',
             }}
           >
@@ -300,7 +300,7 @@ export default function Galeria() {
               style={{
                 fontFamily: 'var(--font-serif)',
                 fontSize: '1.4rem',
-                color: '#2c1810',
+                color: '#1a3826',
                 marginBottom: '0.5rem',
               }}
             >
@@ -313,7 +313,7 @@ export default function Galeria() {
               onClick={clearFilters}
               style={{
                 padding: '0.625rem 1.5rem',
-                background: 'linear-gradient(135deg,#c9a668,#a07840)',
+                background: 'linear-gradient(135deg,#2d6a4f,#1b4332)',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '100px',
@@ -343,7 +343,7 @@ export default function Galeria() {
                   width: '2.5rem',
                   height: '2.5rem',
                   borderRadius: '50%',
-                  border: '1.5px solid #e8d5b8',
+                  border: '1.5px solid #b7ddc8',
                   background: '#fff',
                   boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
                   cursor: totalPages > 1 ? 'pointer' : 'default',
@@ -389,7 +389,7 @@ export default function Galeria() {
                   width: '2.5rem',
                   height: '2.5rem',
                   borderRadius: '50%',
-                  border: '1.5px solid #e8d5b8',
+                  border: '1.5px solid #b7ddc8',
                   background: '#fff',
                   boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
                   cursor: totalPages > 1 ? 'pointer' : 'default',
@@ -425,7 +425,7 @@ export default function Galeria() {
                       height: '0.5rem',
                       borderRadius: '100px',
                       border: 'none',
-                      background: i === current ? '#c9a668' : '#e8d5b8',
+                      background: i === current ? '#2d6a4f' : '#b7ddc8',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                       padding: 0,
@@ -442,7 +442,7 @@ export default function Galeria() {
                 marginTop: '1rem',
                 fontFamily: 'var(--font-sans)',
                 fontSize: '0.8rem',
-                color: '#a08060',
+                color: '#4a7060',
               }}
             >
               Mostrando {Math.min((current + 1) * perPage, filtered.length)} de {filtered.length} vestidos

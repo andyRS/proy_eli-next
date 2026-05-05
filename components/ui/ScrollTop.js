@@ -26,10 +26,10 @@ export default function ScrollTop() {
         width: '2.75rem',
         height: '2.75rem',
         borderRadius: '50%',
-        border: '1.5px solid rgba(201,166,104,0.4)',
+        border: '1.5px solid rgba(45,106,79,0.4)',
         background: 'rgba(255,255,255,0.95)',
         backdropFilter: 'blur(8px)',
-        color: '#c9a668',
+        color: '#2d6a4f',
         fontSize: '1.15rem',
         cursor: 'pointer',
         display: 'flex',
@@ -42,13 +42,13 @@ export default function ScrollTop() {
         transition: 'opacity 0.3s ease, transform 0.3s ease',
       }}
       onMouseOver={(e) => {
-        e.currentTarget.style.background = 'linear-gradient(135deg,#c9a668,#a07840)'
+        e.currentTarget.style.background = 'linear-gradient(135deg,#2d6a4f,#1b4332)'
         e.currentTarget.style.color = '#fff'
         e.currentTarget.style.transform = 'translateY(-3px)'
       }}
       onMouseOut={(e) => {
         e.currentTarget.style.background = 'rgba(255,255,255,0.95)'
-        e.currentTarget.style.color = '#c9a668'
+        e.currentTarget.style.color = '#2d6a4f'
         e.currentTarget.style.transform = visible ? 'translateY(0)' : 'translateY(8px)'
       }}
     >

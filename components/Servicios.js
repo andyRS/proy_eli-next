@@ -10,7 +10,7 @@ export default function Servicios() {
       ref={sectionRef}
       style={{
         padding: '5rem 0',
-        background: 'linear-gradient(180deg, #fdf9f4 0%, #fdf8f0 100%)',
+        background: 'linear-gradient(180deg, #eef7f1 0%, #eef7f1 100%)',
       }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
@@ -23,7 +23,7 @@ export default function Servicios() {
               fontWeight: 600,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: '#c9a668',
+              color: '#2d6a4f',
               marginBottom: '0.75rem',
             }}
           >
@@ -34,7 +34,7 @@ export default function Servicios() {
               fontFamily: 'var(--font-serif,Georgia,serif)',
               fontSize: 'clamp(1.8rem,4vw,2.8rem)',
               fontWeight: 700,
-              color: '#2c1810',
+              color: '#1a3826',
               margin: '0 0 1rem',
             }}
           >
@@ -44,7 +44,7 @@ export default function Servicios() {
             style={{
               fontFamily: 'var(--font-sans,sans-serif)',
               fontSize: '1rem',
-              color: '#7a6050',
+              color: '#4a7060',
               maxWidth: '520px',
               margin: '0 auto',
               lineHeight: 1.65,
@@ -72,7 +72,7 @@ export default function Servicios() {
                 borderRadius: '1.25rem',
                 padding: '2rem 1.75rem',
                 boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
-                border: '1px solid #f0e8dc',
+                border: '1px solid #c8e6d4',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s',
                 display: 'flex',
                 flexDirection: 'column',
@@ -80,13 +80,13 @@ export default function Servicios() {
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = 'translateY(-6px)'
-                e.currentTarget.style.boxShadow = '0 16px 48px rgba(201,166,104,0.15)'
-                e.currentTarget.style.borderColor = '#c9a668'
+                e.currentTarget.style.boxShadow = '0 16px 48px rgba(45,106,79,0.15)'
+                e.currentTarget.style.borderColor = '#2d6a4f'
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.transform = ''
                 e.currentTarget.style.boxShadow = '0 2px 16px rgba(0,0,0,0.06)'
-                e.currentTarget.style.borderColor = '#f0e8dc'
+                e.currentTarget.style.borderColor = '#c8e6d4'
               }}
             >
               {/* Icon */}
@@ -95,7 +95,7 @@ export default function Servicios() {
                   width: '3.5rem',
                   height: '3.5rem',
                   borderRadius: '1rem',
-                  background: 'linear-gradient(135deg, rgba(201,166,104,0.15), rgba(201,166,104,0.05))',
+                  background: 'linear-gradient(135deg, rgba(45,106,79,0.15), rgba(45,106,79,0.05))',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -111,7 +111,7 @@ export default function Servicios() {
                   fontFamily: 'var(--font-serif,Georgia,serif)',
                   fontSize: '1.15rem',
                   fontWeight: 700,
-                  color: '#2c1810',
+                  color: '#1a3826',
                   margin: 0,
                 }}
               >
@@ -123,7 +123,7 @@ export default function Servicios() {
                 style={{
                   fontFamily: 'var(--font-sans,sans-serif)',
                   fontSize: '0.875rem',
-                  color: '#7a6050',
+                  color: '#4a7060',
                   lineHeight: 1.65,
                   margin: 0,
                 }}
@@ -152,12 +152,12 @@ export default function Servicios() {
                         gap: '0.5rem',
                         fontFamily: 'var(--font-sans,sans-serif)',
                         fontSize: '0.82rem',
-                        color: '#5a4030',
+                        color: '#2d4a3a',
                       }}
                     >
                       <span
                         style={{
-                          color: '#c9a668',
+                          color: '#2d6a4f',
                           fontWeight: 700,
                           fontSize: '0.75rem',
                           flexShrink: 0,
@@ -183,9 +183,9 @@ export default function Servicios() {
                   fontFamily: 'var(--font-sans)',
                   fontSize: '0.82rem',
                   fontWeight: 600,
-                  color: '#c9a668',
+                  color: '#2d6a4f',
                   textDecoration: 'none',
-                  borderTop: '1px solid #f0e8dc',
+                  borderTop: '1px solid #c8e6d4',
                   transition: 'gap 0.2s',
                 }}
                 onMouseOver={(e) => (e.currentTarget.style.gap = '0.625rem')}
