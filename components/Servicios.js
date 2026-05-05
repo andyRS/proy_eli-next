@@ -1,10 +1,13 @@
 'use client'
 import { servicios } from '@/data/servicios'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 export default function Servicios() {
+  const sectionRef = useScrollReveal()
   return (
     <section
       id="servicios"
+      ref={sectionRef}
       style={{
         padding: '5rem 0',
         background: 'linear-gradient(180deg, #fdf9f4 0%, #fdf8f0 100%)',
@@ -12,7 +15,7 @@ export default function Servicios() {
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+        <div className="reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <p
             style={{
               fontFamily: 'var(--font-sans,sans-serif)',
@@ -63,6 +66,7 @@ export default function Servicios() {
           {servicios.map((servicio, idx) => (
             <article
               key={servicio.id}
+              className={`reveal reveal-delay-${Math.min(idx + 1, 4)}`}
               style={{
                 background: '#fff',
                 borderRadius: '1.25rem',

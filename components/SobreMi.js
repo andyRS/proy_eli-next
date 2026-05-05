@@ -1,7 +1,9 @@
 'use client'
 import Image from 'next/image'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 export default function SobreMi() {
+  const sectionRef = useScrollReveal()
   const highlights = [
     {
       icon: '🎓',
@@ -23,6 +25,7 @@ export default function SobreMi() {
   return (
     <section
       id="sobre-mi"
+      ref={sectionRef}
       style={{
         padding: '5rem 0',
         background: '#fff',
@@ -40,7 +43,7 @@ export default function SobreMi() {
         }}
       >
         {/* Photo */}
-        <div style={{ position: 'relative' }}>
+        <div className="reveal" style={{ position: 'relative' }}>
           {/* Decorative background blob */}
           <div
             aria-hidden="true"
@@ -118,7 +121,7 @@ export default function SobreMi() {
         </div>
 
         {/* Content */}
-        <div>
+        <div className="reveal reveal-delay-2">
           <p
             style={{
               fontFamily: 'var(--font-sans,sans-serif)',

@@ -4,8 +4,16 @@ import { vestidos } from '@/data/vestidos'
 import VestidoCard from './VestidoCard'
 
 const EDADES = ['Todos', '2-4', '5-7', '8-10', '11-14']
-const OCASIONES = ['Todos', 'fiesta', 'boda', 'comunión', 'graduación', 'casual']
+const OCASIONES = ['Todos', 'fiesta', 'boda', 'comunion', 'casual']
 const COLORES = ['Todos', 'rosa', 'blanco', 'azul', 'lila', 'rojo', 'verde', 'dorado']
+
+const OCASION_LABELS = {
+  Todos: 'Todas',
+  fiesta: 'Fiesta',
+  boda: 'Boda',
+  comunion: 'Comunión',
+  casual: 'Casual',
+}
 
 function FilterChip({ label, active, onClick }) {
   return (
@@ -220,7 +228,7 @@ export default function Galeria() {
                 {OCASIONES.map((o) => (
                   <FilterChip
                     key={o}
-                    label={o === 'Todos' ? 'Todas' : o}
+                    label={OCASION_LABELS[o] || o}
                     active={ocasionFiltro === o}
                     onClick={() => setOcasionFiltro(o)}
                   />
