@@ -17,7 +17,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 100)
+    const handleScroll = () => setIsScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -32,8 +32,7 @@ export default function Navbar() {
       >
         <div className={`${styles.navInner} container`}>
           <Link href="#inicio" className={styles.logo} onClick={close}>
-            <span className={styles.logoIcon}>E</span>
-            <span className={styles.logoText}>ELIZABETH MENDEZ</span>
+            <span className={styles.logoText}>Elizabeth Mendez</span>
           </Link>
 
           <ul className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>

@@ -1,18 +1,14 @@
 'use client'
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState } from 'react'
 import { vestidos } from '@/data/vestidos'
 import VestidoCard from './VestidoCard'
 
-const EDADES = ['Todos', '2-4', '5-7', '8-10', '11-14']
+const EDADES    = ['Todos', '2-4', '5-7', '8-10', '11-14']
 const OCASIONES = ['Todos', 'fiesta', 'boda', 'comunion', 'casual']
-const COLORES = ['Todos', 'rosa', 'blanco', 'azul', 'lila', 'rojo', 'verde', 'dorado']
+const COLORES   = ['Todos', 'rosa', 'blanco', 'azul', 'lila', 'rojo', 'verde', 'dorado']
 
 const OCASION_LABELS = {
-  Todos: 'Todas',
-  fiesta: 'Fiesta',
-  boda: 'Boda',
-  comunion: 'Comunión',
-  casual: 'Casual',
+  Todos: 'Todas', fiesta: 'Fiesta', boda: 'Boda', comunion: 'Comuni\u00f3n', casual: 'Casual',
 }
 
 function FilterChip({ label, active, onClick }) {
@@ -20,18 +16,20 @@ function FilterChip({ label, active, onClick }) {
     <button
       onClick={onClick}
       style={{
-        padding: '0.4rem 1rem',
-        borderRadius: '100px',
-        border: active ? 'none' : '1.5px solid #b7ddc8',
-        background: active ? 'linear-gradient(135deg,#2d6a4f,#1b4332)' : '#fff',
-        color: active ? '#fff' : '#4a6a58',
-        fontFamily: 'var(--font-sans,sans-serif)',
+        padding: '0.375rem 1rem',
+        borderRadius: 'var(--radius-pill)',
+        border: active ? 'none' : '1.5px solid var(--color-primary)',
+        background: active ? 'var(--gradient-cta)' : 'var(--color-surface)',
+        color: active ? '#fff' : 'var(--color-secondary)',
+        fontFamily: 'var(--font-body)',
         fontSize: '0.82rem',
         fontWeight: active ? 600 : 400,
         cursor: 'pointer',
         transition: 'all 0.2s',
         letterSpacing: '0.02em',
-        textTransform: label !== 'Todos' ? 'capitalize' : 'none',
+        whiteSpace: 'nowrap',
+        flexShrink: 0,
+        boxShadow: active ? 'var(--shadow-rose)' : 'none',
       }}
     >
       {label}
@@ -40,74 +38,16 @@ function FilterChip({ label, active, onClick }) {
 }
 
 export default function Galeria() {
-  const [edadFiltro, setEdadFiltro] = useState('Todos')
+  const [edadFiltro,    setEdadFiltro]    = useState('Todos')
   const [ocasionFiltro, setOcasionFiltro] = useState('Todos')
-  const [colorFiltro, setColorFiltro] = useState('Todos')
-  const [current, setCurrent] = useState(0)
-  const [autoplay, setAutoplay] = useState(true)
-  const carouselRef = useRef(null)
-  const touchStartX = useRef(null)
-  const autoplayRef = useRef(null)
+  const [colorFiltro,   setColorFiltro]   = useState('Todos')
 
   const filtered = vestidos.filter((v) => {
-    const matchEdad = edadFiltro === 'Todos' || v.edad === edadFiltro
+    const matchEdad    = edadFiltro    === 'Todos' || v.edad    === edadFiltro
     const matchOcasion = ocasionFiltro === 'Todos' || v.ocasion === ocasionFiltro
-    const matchColor = colorFiltro === 'Todos' || v.color === colorFiltro
+    const matchColor   = colorFiltro   === 'Todos' || v.color   === colorFiltro
     return matchEdad && matchOcasion && matchColor
   })
-
-  // How many slides visible depends on window width — we use groups of 3
-  const [perPage, setPerPage] = useState(3)
-
-  useEffect(() => {
-    const update = () => {
-      if (window.innerWidth < 640) setPerPage(1)
-      else if (window.innerWidth < 1024) setPerPage(2)
-      else setPerPage(3)
-    }
-    update()
-    window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
-  }, [])
-
-  const totalPages = Math.ceil(filtered.length / perPage)
-
-  const goTo = useCallback(
-    (idx) => {
-      const safe = (idx + totalPages) % (totalPages || 1)
-      setCurrent(safe)
-    },
-    [totalPages]
-  )
-
-  // Reset to 0 when filters change
-  useEffect(() => {
-    setCurrent(0)
-  }, [edadFiltro, ocasionFiltro, colorFiltro, perPage])
-
-  // Autoplay
-  useEffect(() => {
-    if (!autoplay || totalPages <= 1) return
-    autoplayRef.current = setInterval(() => goTo(current + 1), 4500)
-    return () => clearInterval(autoplayRef.current)
-  }, [autoplay, current, totalPages, goTo])
-
-  const pauseAutoplay = () => {
-    setAutoplay(false)
-    clearInterval(autoplayRef.current)
-  }
-
-  // Touch swipe
-  const onTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX
-    pauseAutoplay()
-  }
-  const onTouchEnd = (e) => {
-    if (touchStartX.current === null) return
-    const diff = touchStartX.current - e.changedTouches[0].clientX
-    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1)
-    touchStartX.current = null
-  }
 
   const clearFilters = () => {
     setEdadFiltro('Todos')
@@ -115,341 +55,101 @@ export default function Galeria() {
     setColorFiltro('Todos')
   }
 
-  const hasFilters =
-    edadFiltro !== 'Todos' || ocasionFiltro !== 'Todos' || colorFiltro !== 'Todos'
-
-  const pageVestidos = filtered.slice(current * perPage, current * perPage + perPage)
+  const hasFilters = edadFiltro !== 'Todos' || ocasionFiltro !== 'Todos' || colorFiltro !== 'Todos'
 
   return (
-    <section
-      id="galeria-vestidos"
-      style={{
-        padding: '5rem 0',
-        background: 'linear-gradient(180deg, #eef7f1 0%, #fff 100%)',
-      }}
-    >
+    <section id="galeria-vestidos" style={{ padding: '5rem 0', background: 'var(--gradient-soft)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans,sans-serif)',
-              fontSize: '0.8rem',
-              fontWeight: 600,
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              color: '#2d6a4f',
-              marginBottom: '0.75rem',
-            }}
-          >
-            Nuestra Colección
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-secondary)', marginBottom: '0.75rem' }}>
+            Nuestra Colecci\u00f3n
           </p>
-          <h2
-            style={{
-              fontFamily: 'var(--font-serif,Georgia,serif)',
-              fontSize: 'clamp(1.8rem,4vw,2.8rem)',
-              fontWeight: 700,
-              color: '#1a3826',
-              margin: '0 0 1rem',
-            }}
-          >
-            Vestidos para cada ocasión
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 700, color: 'var(--color-text)', margin: '0 0 1rem' }}>
+            Vestidos para cada ocasi\u00f3n
           </h2>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans,sans-serif)',
-              fontSize: '1rem',
-              color: '#4a7060',
-              maxWidth: '520px',
-              margin: '0 auto',
-              lineHeight: 1.65,
-            }}
-          >
-            Explora nuestra colección y encuentra el vestido perfecto para tu princesa.
-            Cada pieza es única, creada con amor y detalle artesanal.
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 300, color: 'var(--color-text-muted)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.65 }}>
+            Explora nuestra colecci\u00f3n y encuentra el vestido perfecto para tu princesa.
+            Cada pieza es \u00fanica, creada con amor y detalle artesanal.
           </p>
         </div>
 
         {/* Filters */}
-        <div
-          style={{
-            background: '#fff',
-            borderRadius: '1rem',
-            padding: '1.25rem 1.5rem',
-            marginBottom: '2rem',
-            boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
-            border: '1px solid #c8e6d4',
-          }}
-        >
+        <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius)', padding: '1.25rem 1.5rem', marginBottom: '2.5rem', boxShadow: 'var(--shadow-sm)', border: '1px solid var(--color-neutral)' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'flex-start' }}>
-            {/* Edad */}
             <div>
-              <p
-                style={{
-                  margin: '0 0 0.5rem',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#2d6a4f',
-                }}
-              >
-                Edad
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+              <p style={{ margin: '0 0 0.5rem', fontFamily: 'var(--font-body)', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-secondary)' }}>Edad</p>
+              <div className="filter-chips" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem' }}>
                 {EDADES.map((e) => (
-                  <FilterChip
-                    key={e}
-                    label={e === 'Todos' ? 'Todas' : `${e} años`}
-                    active={edadFiltro === e}
-                    onClick={() => setEdadFiltro(e)}
-                  />
+                  <FilterChip key={e} label={e === 'Todos' ? 'Todas' : e + ' a\u00f1os'} active={edadFiltro === e} onClick={() => setEdadFiltro(e)} />
                 ))}
               </div>
             </div>
-
-            {/* Ocasión */}
             <div>
-              <p
-                style={{
-                  margin: '0 0 0.5rem',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#2d6a4f',
-                }}
-              >
-                Ocasión
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+              <p style={{ margin: '0 0 0.5rem', fontFamily: 'var(--font-body)', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-secondary)' }}>Ocasi\u00f3n</p>
+              <div className="filter-chips" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem' }}>
                 {OCASIONES.map((o) => (
-                  <FilterChip
-                    key={o}
-                    label={OCASION_LABELS[o] || o}
-                    active={ocasionFiltro === o}
-                    onClick={() => setOcasionFiltro(o)}
-                  />
+                  <FilterChip key={o} label={OCASION_LABELS[o] || o} active={ocasionFiltro === o} onClick={() => setOcasionFiltro(o)} />
                 ))}
               </div>
             </div>
-
-            {/* Color */}
             <div>
-              <p
-                style={{
-                  margin: '0 0 0.5rem',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#2d6a4f',
-                }}
-              >
-                Color
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+              <p style={{ margin: '0 0 0.5rem', fontFamily: 'var(--font-body)', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-secondary)' }}>Color</p>
+              <div className="filter-chips" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem' }}>
                 {COLORES.map((c) => (
-                  <FilterChip
-                    key={c}
-                    label={c === 'Todos' ? 'Todos' : c}
-                    active={colorFiltro === c}
-                    onClick={() => setColorFiltro(c)}
-                  />
+                  <FilterChip key={c} label={c === 'Todos' ? 'Todos' : c} active={colorFiltro === c} onClick={() => setColorFiltro(c)} />
                 ))}
               </div>
             </div>
           </div>
-
           {hasFilters && (
-            <button
-              onClick={clearFilters}
-              style={{
-                marginTop: '1rem',
-                padding: '0.35rem 0.875rem',
-                border: '1.5px solid #b7ddc8',
-                borderRadius: '100px',
-                background: 'transparent',
-                color: '#1b4332',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '0.8rem',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-            >
-              ✕ Limpiar filtros
+            <button onClick={clearFilters} style={{ marginTop: '1rem', padding: '0.35rem 0.875rem', border: '1.5px solid var(--color-primary)', borderRadius: 'var(--radius-pill)', background: 'transparent', color: 'var(--color-secondary)', fontFamily: 'var(--font-body)', fontSize: '0.8rem', cursor: 'pointer' }}>
+              &#x2715; Limpiar filtros
             </button>
           )}
         </div>
 
-        {/* Carousel */}
+        {/* Grid */}
         {filtered.length === 0 ? (
-          <div
-            style={{
-              textAlign: 'center',
-              padding: '4rem 1rem',
-              color: '#4a7060',
-              fontFamily: 'var(--font-sans)',
-            }}
-          >
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
-            <h3
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: '1.4rem',
-                color: '#1a3826',
-                marginBottom: '0.5rem',
-              }}
-            >
+          <div style={{ textAlign: 'center', padding: '4rem 1rem', color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>&#128269;</div>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--color-text)', marginBottom: '0.5rem' }}>
               No encontramos vestidos con esos filtros
             </h3>
-            <p style={{ fontSize: '0.9rem', marginBottom: '1.25rem' }}>
+            <p style={{ fontSize: '0.9rem', marginBottom: '1.25rem', fontWeight: 300 }}>
               Intenta con diferentes criterios o limpia los filtros.
             </p>
-            <button
-              onClick={clearFilters}
-              style={{
-                padding: '0.625rem 1.5rem',
-                background: 'linear-gradient(135deg,#2d6a4f,#1b4332)',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '100px',
-                cursor: 'pointer',
-                fontFamily: 'var(--font-sans)',
-                fontWeight: 600,
-                fontSize: '0.875rem',
-              }}
-            >
+            <button onClick={clearFilters} className="btn btn-primary btn-sm">
               Ver todos los vestidos
             </button>
           </div>
         ) : (
           <>
-            <div style={{ position: 'relative' }}>
-              {/* Prev */}
-              <button
-                onClick={() => { pauseAutoplay(); goTo(current - 1) }}
-                aria-label="Anterior"
-                disabled={totalPages <= 1}
-                style={{
-                  position: 'absolute',
-                  left: '-1.25rem',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  zIndex: 10,
-                  width: '2.5rem',
-                  height: '2.5rem',
-                  borderRadius: '50%',
-                  border: '1.5px solid #b7ddc8',
-                  background: '#fff',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
-                  cursor: totalPages > 1 ? 'pointer' : 'default',
-                  opacity: totalPages > 1 ? 1 : 0.4,
-                  fontSize: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.2s',
-                }}
-              >
-                ‹
-              </button>
-
-              {/* Cards */}
-              <div
-                ref={carouselRef}
-                onTouchStart={onTouchStart}
-                onTouchEnd={onTouchEnd}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: `repeat(${perPage}, 1fr)`,
-                  gap: '1.5rem',
-                  transition: 'opacity 0.3s',
-                }}
-              >
-                {pageVestidos.map((v) => (
-                  <VestidoCard key={v.id} vestido={v} />
-                ))}
-              </div>
-
-              {/* Next */}
-              <button
-                onClick={() => { pauseAutoplay(); goTo(current + 1) }}
-                aria-label="Siguiente"
-                disabled={totalPages <= 1}
-                style={{
-                  position: 'absolute',
-                  right: '-1.25rem',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  zIndex: 10,
-                  width: '2.5rem',
-                  height: '2.5rem',
-                  borderRadius: '50%',
-                  border: '1.5px solid #b7ddc8',
-                  background: '#fff',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
-                  cursor: totalPages > 1 ? 'pointer' : 'default',
-                  opacity: totalPages > 1 ? 1 : 0.4,
-                  fontSize: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.2s',
-                }}
-              >
-                ›
-              </button>
-            </div>
-
-            {/* Dots */}
-            {totalPages > 1 && (
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  gap: '0.5rem',
-                  marginTop: '2rem',
-                }}
-              >
-                {Array.from({ length: totalPages }, (_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => { pauseAutoplay(); setCurrent(i) }}
-                    aria-label={`Página ${i + 1}`}
-                    style={{
-                      width: i === current ? '1.75rem' : '0.5rem',
-                      height: '0.5rem',
-                      borderRadius: '100px',
-                      border: 'none',
-                      background: i === current ? '#2d6a4f' : '#b7ddc8',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                      padding: 0,
-                    }}
-                  />
-                ))}
-              </div>
-            )}
-
-            {/* Counter */}
-            <p
-              style={{
-                textAlign: 'center',
-                marginTop: '1rem',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '0.8rem',
-                color: '#4a7060',
-              }}
+            <div
+              className="vestidos-grid"
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}
             >
-              Mostrando {Math.min((current + 1) * perPage, filtered.length)} de {filtered.length} vestidos
+              {filtered.map((v) => (
+                <VestidoCard key={v.id} vestido={v} />
+              ))}
+            </div>
+            <p style={{ textAlign: 'center', marginTop: '2rem', fontFamily: 'var(--font-body)', fontSize: '0.82rem', fontWeight: 300, color: 'var(--color-text-muted)' }}>
+              {filtered.length} {filtered.length === 1 ? 'vestido encontrado' : 'vestidos encontrados'}
             </p>
           </>
         )}
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .filter-chips { flex-wrap: nowrap !important; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; }
+          .filter-chips::-webkit-scrollbar { display: none; }
+          .vestidos-grid { grid-template-columns: repeat(auto-fill, minmax(260px,1fr)) !important; }
+        }
+        @media (max-width: 480px) {
+          .vestidos-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   )
 }
